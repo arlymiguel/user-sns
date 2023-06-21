@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  application:
+    profiles:
+      active: test
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    schemas: public
+    locations: classpath:/db/migration
+    baseline-on-migrate: true
+  cloud:
+    localstack:
+      s3:
+        accesskey:
+        secretkey:
+        region: us-east-1
+        serviceEndpoint:
+        contentTypeAllowed: application/pdf
+        maxSize: 10000000
+        fileDirectory:

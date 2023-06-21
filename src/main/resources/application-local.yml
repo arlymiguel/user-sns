@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/doc_template_db
+    username: ysg_user
+    password: rootpassword
+  flyway:
+    user: doc_template_local
+    password: local
+  cloud:
+    aws:
+      region:
+        auto: false
+        static: us-east-1
+    localstack:
+      enabled: true
+      services: SQS,SNS
+      sns:
+        enabled: true
+        url: http://localhost:4566
+      sqs:
+        enabled: true
+        url: http://localhost:4566

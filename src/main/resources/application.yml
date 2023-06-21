@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: user-service
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+  flyway:
+    enabled: true
+    schemas: public
+    locations: classpath:/db/migration
+    baseline-on-migrate: true
+  cloud:
+    aws:
+      sqs:
+        topic_user_test: topic-user-test
+      sns:
+        user_publisher: user-publisher
+server:
+  port: 9922
